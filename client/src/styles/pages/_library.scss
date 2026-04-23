@@ -1,0 +1,153 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+.content {
+  flex: 1;
+  padding: 32px 40px 140px;
+  overflow-y: auto;
+
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: v.$color-text-primary;
+  }
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 140px 50px 60px 40px;
+  align-items: center;
+  padding: 0 16px 12px;
+  border-bottom: 1px solid v.$color-border;
+  margin-bottom: 4px;
+
+  &__cell {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: v.$color-text-secondary;
+
+    &--right {
+      text-align: right;
+    }
+
+    &--center {
+      text-align: center;
+    }
+  }
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 140px 50px 60px 40px;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid v.$color-border;
+  @include m.transition(background, v.$transition-fast);
+  border-radius: 8px;
+
+  &:hover {
+    background: v.$color-light-bg;
+  }
+
+  &__number {
+    font-size: 14px;
+    font-weight: 600;
+    color: v.$color-text-secondary;
+    text-align: center;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  &__cover {
+    @include m.flex-center;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+  }
+
+  &__details {
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    @include m.truncate;
+    color: v.$color-text-primary;
+  }
+
+  &__artist {
+    font-size: 12px;
+    margin-top: 2px;
+    color: v.$color-text-secondary;
+    @include m.truncate;
+  }
+
+  &__album {
+    font-size: 13px;
+    color: v.$color-text-primary;
+    @include m.truncate;
+
+    &--none {
+      color: v.$color-text-secondary;
+    }
+  }
+
+  &__date {
+    font-size: 12px;
+    color: v.$color-text-secondary;
+  }
+
+  &__heart {
+    @include m.flex-center;
+    color: v.$color-accent;
+    cursor: pointer;
+    @include m.transition(transform);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__duration {
+    font-size: 12px;
+    color: v.$color-text-secondary;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__menu {
+    @include m.flex-center;
+    color: v.$color-text-secondary;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    @include m.transition;
+
+    &:hover {
+      background: v.$color-hover;
+      color: v.$color-text-primary;
+    }
+  }
+}

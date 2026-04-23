@@ -1,0 +1,115 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+@use "sass:color";
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+  background: v.$color-bg-header;
+  border-bottom: 1px solid v.$color-border;
+  height: 60px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 200px;
+    flex-shrink: 0;
+    text-decoration: none;
+
+    &:hover {
+      color: v.$color-accent;
+    }
+  }
+
+  &__logo-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  &__logo-text {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: v.$color-text-primary;
+  }
+
+  &__search {
+    flex: 1;
+    max-width: 680px;
+    margin: 0 24px;
+    position: relative;
+  }
+
+  &__search-input {
+    width: 100%;
+    padding: 10px 16px 10px 42px;
+    border: none;
+    border-radius: 28px;
+    background: v.$color-bg-search;
+    font-size: 13px;
+    color: v.$color-text-primary;
+    outline: none;
+    font-family: v.$font-main;
+    @include m.transition(background);
+
+    &::placeholder {
+      color: v.$color-text-secondary;
+    }
+
+    &:focus {
+      background: color.scale(v.$color-bg-search, $lightness: -3%);
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: v.$color-text-secondary;
+    display: flex;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px 6px 6px;
+    border-radius: 28px;
+    background: v.$color-bg-search;
+    cursor: pointer;
+    @include m.transition(background);
+    font-family: v.$font-main;
+    flex-shrink: 0;
+
+    &:hover {
+      background: v.$color-hover;
+    }
+  }
+
+  &__user-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__user-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: v.$color-text-primary;
+  }
+
+  &__user-arrow {
+    color: v.$color-accent;
+    margin-left: 4px;
+  }
+}

@@ -1,0 +1,33 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$font-main;
+  background: v.$color-bg-main;
+  color: v.$color-text-primary;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  @include m.button-reset;
+}
