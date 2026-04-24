@@ -1,0 +1,147 @@
+@use '../abstracts/variables' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 32px;
+  border-bottom: 1px solid $color-border;
+  flex-shrink: 0;
+
+  &__logo {
+    display: none;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: $color-accent;
+    color: $color-player-button-text;
+    flex-shrink: 0;
+  }
+
+  &__logo-text {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 500px;
+    margin-left: auto;
+    background: $color-surface;
+    border-radius: 24px;
+    padding: 10px 18px;
+  }
+
+  &__search-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    flex-shrink: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 11px;
+      height: 11px;
+      border: 2px solid $color-text-faint;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 2px;
+      height: 6px;
+      background: $color-text-faint;
+      transform: rotate(45deg) translate(1px, -1px);
+    }
+  }
+
+  &__search-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 12px;
+    color: $color-text;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &::placeholder {
+      color: $color-text-faint;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 16px 5px 5px;
+    border-radius: 24px;
+    background: $color-surface;
+    flex-shrink: 0;
+  }
+
+  &__user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $color-avatar-start, $color-avatar-end);
+    color: $color-player-button-text;
+  }
+
+  &__user-name {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  &__user-arrow {
+    color: $color-text-faint;
+    font-size: 14px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 10px 16px;
+    gap: 16px;
+
+    &__logo {
+      display: flex;
+    }
+
+    &__logo-text {
+      font-size: 14px;
+    }
+
+    &__search {
+      display: none;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 8px 12px;
+
+    &__user-name {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,184 @@
+@use '../abstracts/variables' as *;
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 24px;
+
+  &--desktop {
+    display: flex;
+  }
+
+  &__track-info {
+    width: 200px;
+    min-width: 0;
+    flex-shrink: 0;
+  }
+
+  &__track-name {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 3px;
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__track-artist {
+    display: block;
+    overflow: hidden;
+    font-size: 11px;
+    color: $color-text-faint;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__track-like {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+    flex-shrink: 0;
+
+    &::before {
+      content: '♥';
+      font-size: 15px;
+      line-height: 15px;
+      color: $color-accent;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__button {
+    padding: 4px;
+    color: #cccccc;
+    cursor: pointer;
+  }
+
+  &__play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: $color-player-button;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      margin-left: 3px;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid $color-player-button-text;
+    }
+  }
+
+  &__progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 580px;
+  }
+
+  &__time {
+    min-width: 26px;
+    font-size: 10px;
+    color: $color-text-faint;
+    flex-shrink: 0;
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__progress-bar,
+  &__volume-bar {
+    flex: 1;
+    height: 3px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: $color-border;
+  }
+
+  &__progress-fill {
+    width: 6%;
+    height: 100%;
+    border-radius: 2px;
+    background: $color-accent;
+  }
+
+  &__volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 110px;
+    flex-shrink: 0;
+  }
+
+  &__volume-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    color: $color-text-faint;
+    flex-shrink: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 1px;
+      width: 5px;
+      height: 9px;
+      background: $color-text-faint;
+      clip-path: polygon(0 15%, 35% 15%, 65% 0, 65% 100%, 35% 85%, 0 85%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: 0;
+      width: 5px;
+      height: 11px;
+      border: 1.5px solid $color-text-faint;
+      border-left: none;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+
+  &__volume-fill {
+    width: 70%;
+    height: 100%;
+    border-radius: 2px;
+    background: $color-accent;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &--desktop {
+      display: none;
+    }
+  }
+}

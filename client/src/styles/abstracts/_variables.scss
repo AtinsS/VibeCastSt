@@ -1,0 +1,32 @@
+$color-background: #ffffff;
+$color-surface: #f5f5f3;
+$color-surface-muted: #fafaf8;
+$color-border: #e8e8e4;
+$color-border-light: #f0f0ec;
+$color-text: #1a1a2e;
+$color-text-soft: #555555;
+$color-text-muted: #999999;
+$color-text-faint: #bbbbbb;
+$color-accent: #f97316;
+$color-avatar-start: #a78bfa;
+$color-avatar-end: #7c3aed;
+$color-player-button: #c8c8c4;
+$color-player-button-text: #ffffff;
+$color-icon: #dddddd;
+
+$font-base: "Actor", sans-serif;
+
+@font-face {
+  font-family: "Actor";
+  src:
+    local("Actor Regular"),
+    local("Actor-Regular"),
+    url("../fonts/Actor-Regular.woff2") format("woff2"),
+    url("../fonts/Actor-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 360px;

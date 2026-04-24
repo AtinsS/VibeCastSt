@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as *;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 260px;
+  background: $color-surface;
+  border-right: 1px solid $color-border;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 24px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: $color-accent;
+    color: $color-player-button-text;
+  }
+
+  &__logo-text {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  &__nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    color: $color-text-soft;
+
+    &:hover {
+      background: #ecece8;
+    }
+
+    &--active {
+      background: #eaeae5;
+      color: $color-text;
+      font-weight: 600;
+    }
+  }
+
+  &__nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: $color-accent;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}

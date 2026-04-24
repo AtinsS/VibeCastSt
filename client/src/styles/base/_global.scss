@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-family: $font-base;
+  background: $color-background;
+  color: $color-text;
+  overflow-x: hidden;
+}
+
+svg {
+  display: block;
+}
