@@ -1,76 +1,62 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 
 .sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
-  width: 260px;
-  background: $color-surface;
-  border-right: 1px solid $color-border;
+  width: $sidebar-width;
+  background-color: $color-surface;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 8px 0 26px;
+  }
 
   &__logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 20px 24px;
-    border-bottom: 1px solid $color-border;
-  }
+    padding: 20px 50px 50px;
 
-  &__logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: $color-accent;
-    color: $color-player-button-text;
-  }
-
-  &__logo-text {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-  }
-
-  &__nav {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 16px 0;
-  }
-
-  &__nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 24px;
-    font-size: 15px;
-    font-weight: 500;
-    color: $color-text-soft;
-
-    &:hover {
-      background: #ecece8;
-    }
-
-    &--active {
-      background: #eaeae5;
-      color: $color-text;
-      font-weight: 600;
+    svg {
+      width: 184px;
+      height: 30px;
     }
   }
+}
 
-  &__nav-icon {
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 10px 0 10px 44px;
+  color: $color-text-primary;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background $transition;
+
+  &:hover {
+    background-color: rgba(252, 109, 62, 0.06);
+  }
+
+  &.active {
+    color: $color-text-primary;
+    width: 100%;
+    background-color: $color-background;
+  }
+
+  &__icon {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    color: $color-accent;
     flex-shrink: 0;
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10px;
   }
 }

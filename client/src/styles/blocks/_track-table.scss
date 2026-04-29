@@ -1,142 +1,107 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 
 .track-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
 
   &__header-row {
-    border-bottom: 1px solid #e0e0dc;
+    border-bottom: 1px solid $color-border;
   }
 
   &__header-cell {
-    padding: 8px 12px 10px;
-    font-size: 11px;
-    font-weight: 600;
-    color: $color-text-faint;
+    padding: 3px 0;
+    color: $color-text-muted;
+    font-size: 0.6875rem;
+    font-weight: 500;
     text-align: left;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
     vertical-align: middle;
+    letter-spacing: 0.05em;
 
     &--index {
-      width: 40px;
+      width: 45px;
     }
 
-    &--date {
-      width: 130px;
-      text-align: right;
+    &:nth-child(2) {
+      width: 43%;
     }
 
-    &--like {
-      width: 40px;
+    &:nth-child(3) {
+      width: 26%;
+    }
+
+    &:nth-child(4) {
+      width: 17%;
+    }
+
+    &:nth-child(5) {
+      width: 70px;
       text-align: center;
     }
 
-    &--duration {
-      width: 50px;
+    &:nth-child(6) {
+      width: 67px;
       text-align: center;
     }
 
-    &--actions {
-      width: 30px;
+    &:nth-child(7) {
+      width: 29px;
       text-align: center;
-    }
-  }
-
-  &__header-icon {
-    position: relative;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    vertical-align: middle;
-
-    &--calendar {
-      &::before {
-        content: '';
-        position: absolute;
-        top: 1px;
-        left: 1px;
-        width: 12px;
-        height: 11px;
-        border: 1.5px solid $color-text-faint;
-        border-radius: 2px;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: -1px;
-        left: 3px;
-        width: 2px;
-        height: 3px;
-        background: $color-text-faint;
-        border-radius: 1px;
-        box-shadow: 5px 0 0 $color-text-faint;
-      }
-    }
-
-    &--heart {
-      &::before {
-        content: '♥';
-        font-size: 14px;
-        line-height: 14px;
-        color: $color-text-faint;
-      }
-    }
-
-    &--clock {
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 12px;
-        height: 12px;
-        border: 1.5px solid $color-text-faint;
-        border-radius: 50%;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 5px;
-        width: 1.5px;
-        height: 4px;
-        background: $color-text-faint;
-      }
     }
   }
 
   &__row {
-    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+    border-bottom: 1px solid $color-border-light;
+    transition: background $transition;
 
     &:hover {
-      background: $color-surface-muted;
+      background-color: #fafafa;
+    }
+
+    &--playing {
+      background-color: rgba(252, 109, 62, 0.03);
+
+      .track-table__number,
+      .track-table__track-name {
+        color: $color-accent;
+      }
     }
   }
 
   &__cell {
-    padding: 10px 12px;
-    text-align: left;
+    padding: 19px 4px;
+    font-size: 0.8125rem;
     vertical-align: middle;
 
-    &--index,
-    &--like,
-    &--duration,
-    &--actions {
+    &--index {
+      color: $color-text-secondary;
       text-align: center;
     }
 
     &--date {
-      text-align: right;
+      color: $color-text-muted;
+      font-size: 0.75rem;
+    }
+
+    &--duration {
+      color: $color-text-secondary;
+      font-size: .875rem;
+      font-variant-numeric: tabular-nums;
+      text-align: left;
+    }
+
+    &--actions {
+      text-align: center;
     }
   }
 
   &__number {
-    font-size: 14px;
-    font-weight: 500;
-    color: #888888;
+    color: $color-text-primary;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-right: 25px;
   }
 
   &__track {
@@ -148,51 +113,67 @@
   &__track-info {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  &__track-name,
+  &__album,
+  &__track-artist {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__track-name {
-    margin-bottom: 2px;
-    font-size: 14px;
+    color: $color-text-primary;
+    font-size: 0.8125rem;
     font-weight: 500;
   }
 
   &__track-artist {
-    font-size: 12px;
     color: $color-text-muted;
+    font-size: 0.75rem;
   }
 
   &__album {
-    font-size: 13px;
-  }
-
-  &__date,
-  &__duration {
-    font-size: 12px;
-    color: $color-text-faint;
-  }
-
-  &__like-icon {
-    position: relative;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-
-    &::before {
-      content: '♥';
-      font-size: 18px;
-      line-height: 18px;
-      color: $color-accent;
-    }
+    display: block;
+    color: $color-text-primary;
+    font-size: 0.8125rem;
   }
 
   &__more {
-    color: $color-icon;
-    font-size: 14px;
-    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background: none;
+    border: none;
+    border-radius: $radius-sm;
     cursor: pointer;
+    transition: background $transition;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
   }
 
-  @media (max-width: $breakpoint-tablet) {
-    display: none;
+  &__like-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition:
+      transform $transition,
+      opacity $transition;
+      margin: 12px 0px 0px 25px;
+
+    &:hover {
+      opacity: 0.7;
+      transform: scale(1.15);
+    }
   }
 }

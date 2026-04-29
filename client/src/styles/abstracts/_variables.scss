@@ -1,18 +1,15 @@
 $color-background: #ffffff;
-$color-surface: #f5f5f3;
-$color-surface-muted: #fafaf8;
-$color-border: #e8e8e4;
-$color-border-light: #f0f0ec;
-$color-text: #1a1a2e;
-$color-text-soft: #555555;
-$color-text-muted: #999999;
-$color-text-faint: #bbbbbb;
-$color-accent: #f97316;
-$color-avatar-start: #a78bfa;
-$color-avatar-end: #7c3aed;
-$color-player-button: #c8c8c4;
-$color-player-button-text: #ffffff;
-$color-icon: #dddddd;
+$color-accent: #fc6d3e;
+$color-text-primary: #1a2b49;
+$color-text-secondary: #8b8b8b;
+$color-text-muted: #c4c4c4;
+$color-border: #e8e8e8;
+$color-border-light: #f0f0f0;
+$color-surface: #f5f5f5;
+
+$sidebar-width: 290px;
+$header-height: 64px;
+$player-height: 100px;
 
 $font-base: "Actor", sans-serif;
 
@@ -21,12 +18,18 @@ $font-base: "Actor", sans-serif;
   src:
     local("Actor Regular"),
     local("Actor-Regular"),
-    url("../fonts/Actor-Regular.woff2") format("woff2"),
-    url("../fonts/Actor-Regular.woff") format("woff");
+    url("../../fonts/Actor-Regular.woff2") format("woff2"),
+    url("../../fonts/Actor-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-pill: 999px;
+$transition: 0.2s ease;
 
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 360px;

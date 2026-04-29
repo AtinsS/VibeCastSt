@@ -1,26 +1,12 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 
 .page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  padding: 20px 0;
 
-  &__body {
-    display: flex;
-    flex: 1;
-    min-height: 0;
-  }
-
-  &__main {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
-  }
-
-  &__player {
-    flex-shrink: 0;
-    border-top: 1px solid $color-border;
+  &__title {
+    margin-bottom: 35px;
+    color: $color-text-primary;
+    font-size: 1.875rem;
+    font-weight: 400;
   }
 }

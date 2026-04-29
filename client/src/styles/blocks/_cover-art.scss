@@ -1,92 +1,89 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 
 .cover-art {
+  position: relative;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
-  color: $color-player-button-text;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  border-radius: $radius-sm;
 
   &--table {
-    width: 48px;
-    height: 48px;
-    border-radius: 3px;
-  }
-
-  &--mobile {
-    width: 56px;
-    height: 56px;
-    border-radius: 4px;
-  }
-
-  &--player {
-    width: 44px;
-    height: 44px;
-    border-radius: 4px;
-  }
-
-  &--nirvana {
-    background: #1a1a2e;
-  }
-
-  &--coolio {
-    background: #2d2d2d;
-  }
-
-  &--einaudi {
-    background: linear-gradient(180deg, #2a1f0a, #1a1208);
-  }
-
-  &--grace {
-    background: #0a0a0a;
-  }
-
-  &--sepia {
-    background: #3a2a1a;
-  }
-
-  &--crimson {
-    background: #8b1a1a;
-  }
-
-  &--azure {
-    background: #4a7ab5;
-  }
-
-  &--midnight {
-    background: #0a1628;
+    width: 60px;
+    height: 60px;
   }
 
   &__text {
-    font-size: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.5rem;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
+    letter-spacing: 0.05em;
+  }
 
-    &--wide {
-      font-size: 7px;
-      letter-spacing: 2px;
-    }
+  &--nirvana {
+    background: #111111;
+  }
 
-    &--stacked {
-      font-size: 5px;
-      line-height: 1.3;
-      text-transform: none;
+  &--coolio {
+    background: #0d1b2a;
+  }
+
+  &--podcast {
+    background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+  }
+
+  &--threedays {
+    background: #1a1a1a;
+  }
+
+  &--news {
+    background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+  }
+
+  &--hillside {
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+  }
+
+  &--conspirators {
+    background: #e5e7eb;
+
+    .cover-art__text {
+      color: rgba(0, 0, 0, 0.5);
     }
   }
 
-  @media (max-width: $breakpoint-mobile) {
-    &--mobile {
-      width: 48px;
-      height: 48px;
-    }
+  &--spyies {
+    background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
+  }
 
-    &--player {
-      width: 40px;
-      height: 40px;
+  &--einaudi {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #2c1810 0%, #5a3a2a 50%, #1a0f0a 100%);
+    border-radius: $radius-sm;
+
+    .cover-art__text {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.55rem;
     }
+  }
+
+  &--podcast .cover-art__text,
+  &--news .cover-art__text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+  }
+
+  &--hillside .cover-art__text,
+  &--coolio .cover-art__text,
+  &--threedays .cover-art__text,
+  &--spyies .cover-art__text {
+    font-size: 0.45rem;
+    letter-spacing: 0.02em;
   }
 }
