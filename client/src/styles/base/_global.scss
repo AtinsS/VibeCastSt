@@ -35,7 +35,7 @@ svg {
   flex: 1;
   flex-direction: column;
   min-height: 100vh;
-  margin-left: 315px;
+  margin-left: $sidebar-width;
 }
 
 ::-webkit-scrollbar {
@@ -52,5 +52,27 @@ svg {
 
   &:hover {
     background: $color-text-secondary;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  html,
+  body {
+    min-width: 320px;
+  }
+
+  body {
+    display: block;
+    background: $color-surface;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .main-wrapper {
+    display: block;
+    min-height: 0;
+    margin-left: 0;
   }
 }

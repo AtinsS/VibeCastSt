@@ -87,3 +87,20 @@
     letter-spacing: 0.02em;
   }
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .cover-art {
+    width: 70px;
+    height: 70px;
+    border-radius: 0;
+
+    &--table {
+      width: 70px;
+      height: 70px;
+    }
+
+    &__text {
+      font-size: 0.45rem;
+    }
+  }
+}

@@ -4,3 +4,9 @@
   flex: 1;
   padding-bottom: $player-height;
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .content {
+    padding-bottom: 0;
+  }
+}

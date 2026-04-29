@@ -107,3 +107,51 @@
     height: 16px;
   }
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .header {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    z-index: 20;
+    width: auto;
+    height: 26px;
+    background: transparent;
+
+    .container {
+      padding: 0;
+    }
+
+    &__search,
+    &__user-arrow {
+      display: none;
+    }
+
+    &__user {
+      gap: 0;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    &__usernaming {
+      gap: 8px;
+    }
+
+    &__user-avatar {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__user-name {
+      margin: 0;
+      color: #222222;
+      font-size: 0.8125rem;
+      line-height: 1;
+    }
+  }
+}

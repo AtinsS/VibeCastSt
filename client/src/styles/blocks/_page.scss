@@ -10,3 +10,18 @@
     font-weight: 400;
   }
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .page {
+    padding: 0 0 132px;
+    background: $color-surface;
+
+    .container {
+      padding: 0 16px;
+    }
+
+    &__title {
+      display: none;
+    }
+  }
+}

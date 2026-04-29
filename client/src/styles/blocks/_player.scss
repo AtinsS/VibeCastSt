@@ -170,3 +170,107 @@
     width: 70%;
   }
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .player {
+    left: 0;
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr) 48px;
+    grid-template-rows: 60px 22px;
+    height: 112px;
+    padding: 14px 16px 10px;
+    gap: 8px 12px;
+    background: $color-background;
+    border-top: none;
+
+    &__left,
+    &__controls,
+    &__buttons {
+      display: contents;
+    }
+
+    .cover-art {
+      grid-column: 1;
+      grid-row: 1;
+      width: 60px;
+      height: 60px;
+    }
+
+    &__track-info {
+      grid-column: 2;
+      grid-row: 1;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    &__track-name {
+      display: flex;
+      min-width: 0;
+      overflow: hidden;
+      color: $color-text-primary;
+      font-size: 0.875rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &__track-like {
+      flex: 0 0 24px;
+      margin-left: 6px;
+    }
+
+    &__track-artist {
+      display: block;
+      overflow: hidden;
+      max-width: 100%;
+      color: #aaaaaa;
+      font-size: 0.75rem;
+      line-height: 1.35;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &__button,
+    &__volume {
+      display: none;
+    }
+
+    &__play {
+      grid-column: 3;
+      grid-row: 1;
+      align-self: center;
+      justify-self: end;
+
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &__progress {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr) 28px;
+      align-items: center;
+      max-width: none;
+      gap: 8px;
+    }
+
+    &__time {
+      min-width: 0;
+      color: #aaaaaa;
+      font-size: 0.6875rem;
+      text-align: left;
+    }
+
+    &__time--right {
+      text-align: right;
+    }
+
+    &__progress-bar {
+      height: 4px;
+      background: $color-border;
+    }
+  }
+}
